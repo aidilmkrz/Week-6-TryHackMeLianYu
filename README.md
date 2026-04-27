@@ -19,12 +19,24 @@ I used the **OpenVPN** protocol to establish a tunnel between my local attack ma
 ## 🔍 Phase 1: Reconnaissance & Enumeration
 <img width="641" height="505" alt="ss3" src="https://github.com/user-attachments/assets/3fac0cbd-b22f-41b0-b5ef-6e7ddd67cc87" />
 <img width="643" height="506" alt="ss4" src="https://github.com/user-attachments/assets/4045e9d2-3c9b-4307-91c3-81ba64b0e1dd" />
+
 ### 1. Network Scanning (Nmap)
 With the connection established, the first step was to identify the open ports and services running on the target machine. I performed an aggressive service detection scan to map out the attack surface.
 
 **Command:**
 ```bash
 nmap -sV -sC -A 10.80.133.131
+```
+
+### 2. Web Directory Enumeration (Gobuster)
+<img width="627" height="378" alt="ss5" src="https://github.com/user-attachments/assets/d2608f75-0a62-4b75-a894-46b88fc78428" />
+With Port 80 open, I used **Gobuster** to hunt for hidden directories. I chose the `directory-list-2.3-medium.txt` wordlist to ensure a thorough scan of the web server.
+
+**Command:**
+```bash
+gobuster dir -u [http://10.80.133.131](http://10.80.133.131) -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt
+
+
 
 
 
