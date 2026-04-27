@@ -35,6 +35,28 @@ With Port 80 open, I used **Gobuster** to hunt for hidden directories. I chose t
 **Command:**
 ```bash
 gobuster dir -u [http://10.80.133.131](http://10.80.133.131) -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt
+```
+### 3. Web Content Analysis
+After discovering the `/island` directory, I navigated to the page in the browser. The page appeared to be a dead end at first glance, containing only a cryptic message.
+
+<img width="908" height="517" alt="ss6" src="https://github.com/user-attachments/assets/15ce54b5-7bf3-48e3-97fe-3989f0334bff" />
+
+
+### 4. Inspecting the Source Code
+To find hidden clues, I viewed the page source (`Ctrl + U`). This revealed a hidden "Code Word" that was styled to be invisible on the main page (white text on a white background).
+
+<img width="1002" height="502" alt="ss7" src="https://github.com/user-attachments/assets/b36bdd97-b148-4451-8354-a632e9674213" />
+
+**Key Discovery:**
+* **Code Word:** `vigilante`
+* **Comment Hint:** Found an HTML comment `` suggesting further action was required.
+
+---
+
+## 🛠️ Phase 2: Exploitation & Initial Access
+
+### 1. Utilizing the Code Word
+The code word `vigilante` served as a directory name, leading to another hidden layer of the web server where I discovered further forensic challenges.
 
 
 
