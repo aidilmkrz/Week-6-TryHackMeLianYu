@@ -154,22 +154,26 @@ ftp> get .other_user
 ```
 
 ### 11. Analyzing User Intelligence
-After exfiltrating the files, I examined the contents of `.other_user`. The file contained a detailed biography of **Slade Wilson**. This information is critical for user enumeration, as it confirms that `slade` is a valid system user and a likely target for the next phase of the attack.
+After downloading the assets, I used the `cat` command to read the hidden `.other_user` file. This revealed a detailed biography of **Slade Wilson**, confirming his military background and status as a primary system user. This provided the essential username `slade` for the next stage of the attack.
 
-<img width="636" height="431" alt="Slade Wilson Bio" src="https://github.com/user-attachments/assets/dcd22e1f-2e0b-4e3b-a80f-38a540f65a8e" />
+<img width="651" height="335" alt="ss26" src="https://github.com/user-attachments/assets/264afeb1-6195-4550-9463-d439a465cebf" />
 
 ---
 
 ## 🖼️ Phase 3: Forensic Analysis & Foothold
 
-With several images and a confirmed username, I moved into forensic analysis to find the credentials required for a system shell.
+With a confirmed username and several exfiltrated images, I transitioned to steganographic analysis to uncover hidden credentials.
 
-### 1. Steganographic Audit (aa.jpg)
-After downloading the assets from the FTP server, I performed a steganographic audit on `aa.jpg`. Standard extraction attempts required a passphrase, so I utilized **StegSeek** to conduct a lightning-fast brute-force attack against the `rockyou.txt` wordlist.
+### 1. Steganographic Extraction (aa.jpg)
+I performed a steganographic audit on `aa.jpg`. Since the file was password-protected, I utilized **StegSeek** to conduct a high-speed brute-force attack against the `rockyou.txt` wordlist.
 
 **Command:**
 ```bash
 stegseek aa.jpg /usr/share/wordlists/rockyou.txt
+
+
+
+
 
 
 
