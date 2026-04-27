@@ -95,17 +95,15 @@ Following the hint found in the source code, I ran a targeted Gobuster scan on t
 gobuster dir -u [http://10.80.133.131/island/2100/](http://10.80.133.131/island/2100/) -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -x .ticket
 ```
 
-### 6
-. Recovering FTP Credentials
+### 6. Recovering FTP Credentials
 By accessing `http://10.80.133.131/island/2100/green_arrow.ticket` in the browser, I successfully retrieved the "token" required for the next stage of the mission.
 
 <img width="770" height="303" alt="ss15" src="https://github.com/user-attachments/assets/b8b79839-32bb-498a-a11c-752a416eb76b" />
 
 **Credential Leak:**
 * **Username:** `vigilante` (Found previously in the `/island` source code)
-* **Token/Password:** `RTy8yhBQdscX`![Uploading ss16.png…]()
-![Uploading ss16.png…]()
-![Uploading ss16.png…]()
+* **Token/Password:** `RTy8yhBQdscX`<img width="626" height="436" alt="ss18" src="https://github.com/user-attachments/assets/d399d5d0-5bec-44bc-991f-a81c44fe7026" />
+
 
 * **Context:** The file mentions this is a "token to get into Queen's Gambit(Ship)," which hints at using these credentials for a service login.
 
@@ -123,11 +121,13 @@ The token found in the `.ticket` file (`RTy8yhBQdscX`) appeared to be encoded. I
 ### 8. Successful FTP Login
 With the decoded password `!#th3h00d`, I logged into the FTP service (vsFTPd 3.0.2) identified in the initial reconnaissance.
 
-<img width="972" height="785" alt="ss16" src="https://github.com/user-attachments/assets/d4fe9319-ddbf-4fa2-bd7c-2067a2789170" />
+<img width="626" height="436" alt="ss17" src="https://github.com/user-attachments/assets/63df8369-61a7-45ba-96f1-ecda0d2eed96" />
 
 **Command:**
 ```bash
 ftp 10.80.133.131
+
+
 
 
 
