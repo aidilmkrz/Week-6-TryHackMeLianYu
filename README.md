@@ -1,32 +1,18 @@
-
 # Week-6-TryHackMe: LianYu Walkthrough
 
 ## 🌐 Phase 0: Environment Setup
 
-Before launching the attack, it is essential to establish a secure connection to the laboratory environment and identify the target parameters.
+The first step in any penetration test is ensuring a secure and stable connection to the target network. 
 
-### 1. Establishing Connectivity (OpenVPN)
-To interact with the target machine, I utilized **OpenVPN** to connect to the TryHackMe internal network. This creates a secure tunnel between my Kali Linux attack box and the laboratory infrastructure.
+### 1. Connecting to the Lab (OpenVPN)
+I used the **OpenVPN** protocol to establish a tunnel between my local attack machine and the TryHackMe laboratory infrastructure. This allows me to access the private IP addresses assigned to the vulnerable hosts.
 
-<img width="951" height="780" alt="ss2" src="https://github.com/user-attachments/assets/5c677963-a330-4b2c-a851-24f7e34ab7fe" />
+---<img width="951" height="780" alt="ss2" src="https://github.com/user-attachments/assets/4929270d-8949-4eda-a688-827ad34475e5" />
 
-![VPN Connection Status](ss1.png)
-> **Note:** Confirmed "Connected" status to the Europe (Ireland) server, assigning my machine a virtual IP within the lab subnet.
 
-### 2. Target Identification
-Once the network tunnel was established, I deployed the **Lian_Yu** machine. Lian_Yu is a beginner-level security challenge themed around the "Arrow" TV series. 
+**Technical Details:**
+* **VPN Server:** Europe (Ireland)
+* **Status:** Connected
+* **Virtual IP Address:** 10.10.x.x (As shown in the internal virtual IP field)
 
-![Machine Deployment](image_a04b97.png)
-* **Target IP Address:** `10.10.x.x` (Dynamic based on deployment)
-* **Difficulty:** Beginner
-* **Objective:** Capture the User and Root flags.
-
-![Sudo Privileges](image_a1affc.png)
-
-### 2. Final Objective: Root Flag
-By exploiting the `pkexec` permission, I escalated my privileges to root and captured the final flag in the `/root` directory.
-
----
-
-## 🏆 Conclusion
-Machine 100% Completed! This lab was a great exercise in combining web enumeration with forensic analysis and Linux permission exploitation.
+---<img width="950" height="433" alt="ss1" src="https://github.com/user-attachments/assets/9c8fb292-aa74-4f2b-93e7-5b943dc60ffc" />
