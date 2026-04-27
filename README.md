@@ -149,27 +149,39 @@ During the FTP session, I identified a hidden file named `.other_user`. I downlo
 <img width="636" height="431" alt="ss25" src="https://github.com/user-attachments/assets/26930a1c-19fc-4236-a9d3-30823f318517" />
 
 **Command:**
-```bash
+```bash!
+
 ftp> get .other_user
 ```
 
 ### 11. Analyzing User Intelligence
-After downloading the assets, I used the `cat` command to read the hidden `.other_user` file. This revealed a detailed biography of **Slade Wilson**, confirming his military background and status as a primary system user. This provided the essential username `slade` for the next stage of the attack.
+After downloading the assets, I stegseek aa.jpg and found "password","ss.zip",and "aa.jpg.out",so i found out the file was zip and i unzip it.Then,I found "extracted_data/passwd.txt" and "extracted_data/shado"
 
 <img width="651" height="335" alt="ss26" src="https://github.com/user-attachments/assets/264afeb1-6195-4550-9463-d439a465cebf" />
 
 ---
+<img width="630" height="475" alt="ss37" src="https://github.com/user-attachments/assets/37b65807-35ee-4c9c-baf1-e96db6b63f0d" />
 
-## 🖼️ Phase 3: Forensic Analysis & Foothold
+## 12.Passwd.txt
+For this one i cat the psswd.txt and shado,so i found the password that says "M3tahuman"
 
-With a confirmed username and several exfiltrated images, I transitioned to steganographic analysis to uncover hidden credentials.
+<img width="642" height="312" alt="ss31" src="https://github.com/user-attachments/assets/063dc415-5420-4685-8870-2b30ea15b648" />
 
-### 1. Steganographic Extraction (aa.jpg)
-I performed a steganographic audit on `aa.jpg`. Since the file was password-protected, I utilized **StegSeek** to conduct a high-speed brute-force attack against the `rockyou.txt` wordlist.
+## 13. User.txt
+To crack into user.txt,i typed "ssh slade@10.80.133.131" where the required password was the "M3tahuman" and BOOMM i get into the user.txt
+<img width="628" height="455" alt="ss35" src="https://github.com/user-attachments/assets/7ba939d1-1fac-47cb-b56f-be4bce204dba" />
+<img width="647" height="507" alt="ss36" src="https://github.com/user-attachments/assets/f45df740-9dfc-4ede-b03c-8dd49a6bff23" />
 
-**Command:**
-```bash
-stegseek aa.jpg /usr/share/wordlists/rockyou.txt
+So the user.txt is "THM{p30p7E_K33p_53CRET5__C0MPUT3E%_D0N'T}
+
+14.Root.txt
+
+To get into the root.txt,i typed "sudo -1" and the password "M3tahuman" then it pop out the " /usr/bin/pkexec. So i typed ~$ sudo pkexec /bin/sh and it goes #,and when i ask whoami,it says root means i have made it,and then i continue with "cd/root" and "ls",it says root.txt and final part i continued with "cat root.xt" and finally mission accomplished
+<img width="630" height="475" alt="ss37" src="https://github.com/user-attachments/assets/f3e6a2cf-4bdd-4047-bc58-78ec4ad69658" />
+
+<img width="650" height="502" alt="ss38" src="https://github.com/user-attachments/assets/511ee57b-c8d5-4542-92d9-7e13f0e62c9a" />
+
+
 
 
 
