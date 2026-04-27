@@ -66,7 +66,68 @@ After discovering the keyword, I performed a targeted scan on the `/island` dire
 **Command:**
 ```bash
 gobuster dir -u [http://10.80.133.131/island/](http://10.80.133.131/island/) -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt
+```
 
+### 3. Analyzing the /2100 Directory
+Upon navigating to `http://10.80.133.131/island/2100/`, I was met with a page titled **"How Oliver Queen finds his way to Lian_Yu?"** featuring a broken YouTube video link.
+
+<img width="857" height="750" alt="ss12" src="https://github.com/user-attachments/assets/78c5377d-3064-4371-a26c-e792c037b64d" />
+
+**Observation:**
+The video being unavailable is a clear indicator that the solution is not in the video itself, but likely hidden in the directory's metadata or background files.
+
+### 4. Extracting the ".ticket" Clue
+Upon inspecting the source code of the `/island/2100/` page (`Ctrl + U`), I discovered a hidden HTML comment that revealed the next step of the challenge.
+
+<img width="723" height="377" alt="ss13" src="https://github.com/user-attachments/assets/a190c3bd-5fbf-43a0-8b1c-87eb078185c3" />
+
+**Key Discovery:**
+* **Hidden Comment:** ``
+* **Analysis:** This comment explicitly mentions a `.ticket` file. In a directory enumeration context, this suggests that there is a file named `main.ticket`, `island.ticket`, or similar, which likely contains credentials or further instructions.
+
+### 5. Finding the Ticket File
+Following the hint found in the source code, I ran a targeted Gobuster scan on the `/island/2100/` directory, specifically searching for files with the `.ticket` extension.
+
+<img width="632" height="347" alt="ss14" src="https://github.com/user-attachments/assets/3f8ad10c-9afe-4ad0-a00e-829f7dc86923" />
+
+**Command:**
+```bash
+gobuster dir -u [http://10.80.133.131/island/2100/](http://10.80.133.131/island/2100/) -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -x .ticket
+```
+
+### 6
+. Recovering FTP Credentials
+By accessing `http://10.80.133.131/island/2100/green_arrow.ticket` in the browser, I successfully retrieved the "token" required for the next stage of the mission.
+
+<img width="770" height="303" alt="ss15" src="https://github.com/user-attachments/assets/b8b79839-32bb-498a-a11c-752a416eb76b" />
+
+**Credential Leak:**
+* **Username:** `vigilante` (Found previously in the `/island` source code)
+* **Token/Password:** `RTy8yhBQdscX`![Uploading ss16.png…]()
+![Uploading ss16.png…]()
+![Uploading ss16.png…]()
+
+* **Context:** The file mentions this is a "token to get into Queen's Gambit(Ship)," which hints at using these credentials for a service login.
+
+### 7. Decoding the FTP Password
+The token found in the `.ticket` file (`RTy8yhBQdscX`) appeared to be encoded. I used **CyberChef** to test various encoding schemes and determined it was **Base58**. 
+
+!<img width="972" height="785" alt="ss16" src="https://github.com/user-attachments/assets/95a682c9-ca06-4290-8e65-2b72a96562a1" />
+
+
+**Decryption Results:**
+* **Encoded String:** `RTy8yhBQdscX`
+* **Decoding Method:** Base58
+* **Cleartext Password:** `!#th3h00d`
+
+### 8. Successful FTP Login
+With the decoded password `!#th3h00d`, I logged into the FTP service (vsFTPd 3.0.2) identified in the initial reconnaissance.
+
+<img width="972" height="785" alt="ss16" src="https://github.com/user-attachments/assets/d4fe9319-ddbf-4fa2-bd7c-2067a2789170" />
+
+**Command:**
+```bash
+ftp 10.80.133.131
 
 
 
