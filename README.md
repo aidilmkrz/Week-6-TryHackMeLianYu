@@ -160,7 +160,7 @@ After downloading the assets, I stegseek aa.jpg and found "password","ss.zip",an
 <img width="651" height="335" alt="ss26" src="https://github.com/user-attachments/assets/264afeb1-6195-4550-9463-d439a465cebf" />
 
 ---
-<img width="630" height="475" alt="ss37" src="https://github.com/user-attachments/assets/37b65807-35ee-4c9c-baf1-e96db6b63f0d" />
+
 
 ## 12.Passwd.txt
 For this one i cat the psswd.txt and shado,so i found the password that says "M3tahuman"
