@@ -128,7 +128,7 @@ With the decoded password `!#th3h00d`, I logged into the FTP service (vsFTPd 3.0
 ftp 10.80.133.131
 ```
 
-### 10. Data Exfiltration via FTP
+### 9. Data Exfiltration via FTP
 Once logged in as `vigilante`, I performed a directory listing and identified three image files that appeared to be targets for steganographic analysis. I switched the FTP session to **binary mode** to ensure file integrity during the download process.
 
 <img width="637" height="506" alt="ss20" src="https://github.com/user-attachments/assets/3ea4388c-31a3-43fe-a358-baf2dbd1738d" />
@@ -140,6 +140,20 @@ ftp> binary
 ftp> get Leave_me_alone.png
 ftp> get Queen's_Gambit.png
 ftp> get aa.jpg
+```
+
+### 10. Discovery of Additional User Data
+During the FTP session, I identified a hidden file named `.other_user`. I downloaded this file along with the image assets for further review.
+
+<img width="632" height="320" alt="ss24" src="https://github.com/user-attachments/assets/dcd22e1f-2e0b-4e3b-a80f-38a540f65a8e" />
+<img width="636" height="431" alt="ss25" src="https://github.com/user-attachments/assets/26930a1c-19fc-4236-a9d3-30823f318517" />
+
+**Command:**
+```bash
+ftp> get .other_user
+```
+
+
 
 
 
