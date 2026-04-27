@@ -1,3 +1,4 @@
+<img width="950" height="433" alt="ss1" src="https://github.com/user-attachments/assets/3f2cdc61-a28c-4010-b679-2b1818bb3284" />
 # Week-6-TryHackMe: LianYu Walkthrough
 
 A detailed walkthrough of the Lian_Yu CTF on TryHackMe. This lab involves forensic file repair, steganography, and Linux privilege escalation.
