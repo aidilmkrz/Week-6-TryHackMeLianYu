@@ -18,6 +18,7 @@ I used the **OpenVPN** protocol to establish a tunnel between my local attack ma
 
 ## 🔍 Phase 1: Reconnaissance & Enumeration
 <img width="641" height="505" alt="ss3" src="https://github.com/user-attachments/assets/3fac0cbd-b22f-41b0-b5ef-6e7ddd67cc87" />
+<img width="643" height="506" alt="ss4" src="https://github.com/user-attachments/assets/4045e9d2-3c9b-4307-91c3-81ba64b0e1dd" />
 ### 1. Network Scanning (Nmap)
 With the connection established, the first step was to identify the open ports and services running on the target machine. I performed an aggressive service detection scan to map out the attack surface.
 
