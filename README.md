@@ -1,3 +1,4 @@
+
 # Week-6-TryHackMe: LianYu Walkthrough
 
 ## 🌐 Phase 0: Environment Setup
@@ -6,6 +7,8 @@ Before launching the attack, it is essential to establish a secure connection to
 
 ### 1. Establishing Connectivity (OpenVPN)
 To interact with the target machine, I utilized **OpenVPN** to connect to the TryHackMe internal network. This creates a secure tunnel between my Kali Linux attack box and the laboratory infrastructure.
+
+<img width="951" height="780" alt="ss2" src="https://github.com/user-attachments/assets/5c677963-a330-4b2c-a851-24f7e34ab7fe" />
 
 ![VPN Connection Status](ss1.png)
 > **Note:** Confirmed "Connected" status to the Europe (Ireland) server, assigning my machine a virtual IP within the lab subnet.
