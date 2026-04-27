@@ -1,4 +1,4 @@
-<img width="620" height="323" alt="ss9" src="https://github.com/user-attachments/assets/b67e1c22-ea89-4818-a658-986a3d6df829" /><img width="620" height="323" alt="ss9" src="https://github.com/user-attachments/assets/76cb5ab7-283d-4592-a4a7-5e51119b5669" /># Week-6-TryHackMe: LianYu Walkthrough
+# Week-6-TryHackMe: LianYu Walkthrough
 
 ## 🌐 Phase 0: Environment Setup
 
@@ -58,8 +58,9 @@ To find hidden clues, I viewed the page source (`Ctrl + U`). This revealed a hid
 ### 1. Utilizing the Code Word
 The code word `vigilante` served as a directory name, leading to another hidden layer of the web server where I discovered further forensic challenges.
 
-<img width="620" height="323" alt="ss10" src="https://github.com/user-attachments/assets/185612f8-2b64-4eba-b179-161227ec0f78" />
+
 ### 2. Recursive Enumeration (/island/2100)
+<img width="620" height="323" alt="ss10" src="https://github.com/user-attachments/assets/185612f8-2b64-4eba-b179-161227ec0f78" />
 After discovering the keyword, I performed a targeted scan on the `/island` directory. This revealed a sub-directory named `2100`.
 
 **Command:**
