@@ -174,7 +174,7 @@ To crack into user.txt,i typed "ssh slade@10.80.133.131" where the required pass
 
 So the user.txt is "THM{p30p7E_K33p_53CRET5__C0MPUT3E%_D0N'T}
 
-14.Root.txt
+## 14.Root.txt
 
 To get into the root.txt,i typed "sudo -1" and the password "M3tahuman" then it pop out the " /usr/bin/pkexec. So i typed ~$ sudo pkexec /bin/sh and it goes #,and when i ask whoami,it says root means i have made it,and then i continue with "cd/root" and "ls",it says root.txt and final part i continued with "cat root.xt" and finally mission accomplished
 <img width="630" height="475" alt="ss37" src="https://github.com/user-attachments/assets/f3e6a2cf-4bdd-4047-bc58-78ec4ad69658" />
@@ -182,7 +182,9 @@ To get into the root.txt,i typed "sudo -1" and the password "M3tahuman" then it 
 <img width="650" height="502" alt="ss38" src="https://github.com/user-attachments/assets/511ee57b-c8d5-4542-92d9-7e13f0e62c9a" />
 
 
-
+## Machine Succeed
+<img width="920" height="721" alt="ss40" src="https://github.com/user-attachments/assets/2abd0d81-10e1-4a61-a4d3-650fdd862e0c" />
+<img width="938" height="785" alt="ss41" src="https://github.com/user-attachments/assets/ffaec29d-cdf4-4a90-9da2-229330682aa5" />
 
 
 
