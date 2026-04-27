@@ -126,6 +126,20 @@ With the decoded password `!#th3h00d`, I logged into the FTP service (vsFTPd 3.0
 **Command:**
 ```bash
 ftp 10.80.133.131
+```
+
+### 10. Data Exfiltration via FTP
+Once logged in as `vigilante`, I performed a directory listing and identified three image files that appeared to be targets for steganographic analysis. I switched the FTP session to **binary mode** to ensure file integrity during the download process.
+
+<img width="637" height="506" alt="ss20" src="https://github.com/user-attachments/assets/3ea4388c-31a3-43fe-a358-baf2dbd1738d" />
+<img width="535" height="160" alt="ss22" src="https://github.com/user-attachments/assets/4fa57d51-1cbe-442a-9b07-63a10e8862bb" />
+
+**Command:**
+```bash
+ftp> binary
+ftp> get Leave_me_alone.png
+ftp> get Queen's_Gambit.png
+ftp> get aa.jpg
 
 
 
